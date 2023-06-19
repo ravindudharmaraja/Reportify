@@ -1,0 +1,36 @@
+function getAllData() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getActiveSheet();
+
+  var firebaseUrl = "https://records-bdf03-default-rtdb.asia-southeast1.firebasedatabase.app/records";
+
+  var data = FirebaseApp.getDatabaseByUrl(firebaseUrl).getData();
+
+  var rows = [];
+
+  for (var userId in data) {
+    if (data.hasOwnProperty(userId)) {
+      var userRecord = data[userId];
+      if (userRecord.sales) {
+        for (var salesDate in userRecord.sales) {
+          if (userRecord.sales.hasOwnProperty(salesDate)) {
+            var salesData = userRecord.sales[salesDate].salesData;
+            if (Array.isArray(salesData)) {
+              for (var i = 0; i < salesData.length; i++) {
+                var record = salesData[i];
+                rows.push([userId, userRecord.userId, salesDate, record.product, record.sales, record.timestamp]);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (rows.length > 0) {
+    var dataRange = sheet.getRange(2, 1, rows.length, 6);
+    dataRange.setValues(rows);
+  } else {
+    Logger.log("No data available to populate into the spreadsheet.");
+  }
+}

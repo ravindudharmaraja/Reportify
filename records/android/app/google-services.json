@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "766865443580",
+    "firebase_url": "https://records-bdf03-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "records-bdf03",
+    "storage_bucket": "records-bdf03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766865443580:android:de2c973bfe581895e8e579",
+        "android_client_info": {
+          "package_name": "com.example.records"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766865443580-526nup0rn6dgummar0n1ao9ei4adbqcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGZn9JpB8Ycwbq_0y0NGeEHExfbGT7s_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766865443580-526nup0rn6dgummar0n1ao9ei4adbqcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
